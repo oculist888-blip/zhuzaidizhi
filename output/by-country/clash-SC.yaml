@@ -5,6 +5,61 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇸🇨 SC 01 - xiaohe
+  type: vless
+  server: 104.21.55.123
+  port: 2053
+  uuid: 95de071f-747c-dc07-36ac-5c0854a9e50e
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: restless-boat-ebf2.moha102030.workers.dev
+  network: ws
+  ws-opts:
+    path: /sync
+    headers:
+      Host: restless-boat-ebf2.moha102030.workers.dev
+- name: 🇸🇨 SC 02 - xiaohe
+  type: vless
+  server: 104.21.55.123
+  port: 443
+  uuid: 95de071f-747c-dc07-36ac-5c0854a9e50e
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: restless-boat-ebf2.moha102030.workers.dev
+  network: ws
+  ws-opts:
+    path: /sync
+    headers:
+      Host: restless-boat-ebf2.moha102030.workers.dev
+- name: 🇸🇨 SC 03 - xiaohe
+  type: vless
+  server: 154.197.64.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime36.workers.dev
+- name: 🇸🇨 SC 04 - xiaohe
+  type: vless
+  server: 45.130.125.96
+  port: 443
+  uuid: 28607fa7-db30-47d6-942a-f5744e4be9ad
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: dfsuporte.garena.com.ex33r.eu.cc
+  network: ws
+  ws-opts:
+    path: /id-pusat
+    headers:
+      Host: dfsuporte.garena.com.ex33r.eu.cc
+- name: 🇸🇨 SC 05 - xiaohe
   type: vmess
   server: 156.226.183.181
   port: 54321
@@ -14,17 +69,57 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: true
+- name: 🇸🇨 SC 06 - xiaohe
+  type: vless
+  server: 188.114.98.134
+  port: 443
+  uuid: ba49d874-fe02-465d-82d3-ed981dc7694f
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: o94yv7LiF0-AnxIsd9EFehVvs7mXn6bh.z-UlE-ikA-d-e-nE-k-E.WorkeRs.dEv
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: o94yv7lif0-anxisd9efehvvs7mxn6bh.z-ule-ika-d-e-ne-k-e.workers.dev
+- name: 🇸🇨 SC 07 - xiaohe
+  type: vless
+  server: 104.16.174.164
+  port: 443
+  uuid: 73796e63-0000-4000-8000-000000000000
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: wireguard.ahmad-kh5716.workers.dev
+  network: ws
+  ws-opts:
+    path: /sync
+    headers:
+      Host: wireguard.ahmad-kh5716.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇸🇨 SC 01 - xiaohe
+  - 🇸🇨 SC 02 - xiaohe
+  - 🇸🇨 SC 03 - xiaohe
+  - 🇸🇨 SC 04 - xiaohe
+  - 🇸🇨 SC 05 - xiaohe
+  - 🇸🇨 SC 06 - xiaohe
+  - 🇸🇨 SC 07 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇸🇨 SC 01 - xiaohe
+  - 🇸🇨 SC 02 - xiaohe
+  - 🇸🇨 SC 03 - xiaohe
+  - 🇸🇨 SC 04 - xiaohe
+  - 🇸🇨 SC 05 - xiaohe
+  - 🇸🇨 SC 06 - xiaohe
+  - 🇸🇨 SC 07 - xiaohe
 rules:
 - MATCH,PROXIES

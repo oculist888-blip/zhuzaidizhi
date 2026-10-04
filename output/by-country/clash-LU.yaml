@@ -4,33 +4,31 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇧🇷 BR 01 - xiaohe
-  type: vmess
-  server: 89.39.161.157
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
+- name: 🇱🇺 LU 01 - xiaohe
+  type: vless
+  server: 188.42.145.7
+  port: 8443
+  uuid: 7967bf59-57e3-4cde-9898-527b0fe60022
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: ''
+  servername: speed.dulacloud.store
   network: ws
   ws-opts:
-    path: /linkvws
+    path: /dula?Telegram-WangCai2
     headers:
-      Host: ''
+      Host: speed.dulacloud.store
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇧🇷 BR 01 - xiaohe
+  - 🇱🇺 LU 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇧🇷 BR 01 - xiaohe
+  - 🇱🇺 LU 01 - xiaohe
 rules:
 - MATCH,PROXIES

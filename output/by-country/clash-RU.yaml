@@ -5,33 +5,26 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
-  type: ss
-  server: 130.49.189.158
-  port: 43558
-  cipher: chacha20-ietf-poly1305
-  password: eicdhshSrFLCx/sZ1PSpuKyoVWGZpU95tFS4iGC1c04=
-  udp: true
-- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  type: ss
-  server: 194.87.68.140
-  port: 50660
-  cipher: aes-256-gcm
-  password: 81a20429165df87e
-  udp: true
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   type: vless
-  server: 104.21.79.199
+  server: 84.38.183.237
   port: 443
-  uuid: 38d6b629-64c2-4c31-a10d-26eb3a2a053d
+  uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: lHNs3ww2-CXQ-Gj1vvOBkEPIg4noPkc.hqu4v38Hi9iFtcp6mZfMX-3bmx.WoRKeRS.dEV
+  servername: ws.nightproducts.ru
   network: ws
   ws-opts:
-    path: /vl/cxl8Wn1ylnsk63nJ0
+    path: /vless#/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
-      Host: lhns3ww2-cxq-gj1vvobkepig4nopkc.hqu4v38hi9iftcp6mzfmx-3bmx.workers.dev
+      Host: 84.38.183.237
+- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
+  type: ss
+  server: 46.17.45.31
+  port: 50660
+  cipher: aes-256-gcm
+  password: bdb313adf74c2ede
+  udp: true
 proxy-groups:
 - name: PROXIES
   type: select
@@ -39,7 +32,6 @@ proxy-groups:
   - AUTO
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -47,6 +39,5 @@ proxy-groups:
   proxies:
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
 rules:
 - MATCH,PROXIES

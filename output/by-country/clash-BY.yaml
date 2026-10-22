@@ -4,31 +4,30 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇹🇭 TH 01 - xiaohe
+- name: 🇧🇾 BY 01 - xiaohe
   type: vless
-  server: 104.16.10.185
-  port: 443
-  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  server: 95.128.71.79
+  port: 14430
+  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  servername: v2ray.simspeedup.com
   network: ws
   ws-opts:
-    path: /ws
+    path: /vless
     headers:
-      Host: v2ray.simspeedup.com
+      Host: 95.128.71.79
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇹🇭 TH 01 - xiaohe
+  - 🇧🇾 BY 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇹🇭 TH 01 - xiaohe
+  - 🇧🇾 BY 01 - xiaohe
 rules:
 - MATCH,PROXIES
